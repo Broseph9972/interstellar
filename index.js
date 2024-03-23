@@ -1,15 +1,20 @@
 import express from 'express'
 import basicAuth from 'express-basic-auth'
-import http from 'node:http'
+import https from 'node:https'
 import { createBareServer } from '@tomphttp/bare-server-node'
 import path from 'node:path'
 import cors from 'cors'
 import config from './config.js'
 const __dirname = process.cwd()
-const server = http.createServer()
+import { readFileSync } from "fs";
+const options = {
+   key: readFileSync("/etc/letsencrypt/live/thingy.myftp.org/privkey.pem"),
+   cert: readFileSync("/etc/letsencrypt/live/thingy.myftp.org/cert.pem"),
+};
+const server = https.createServer(options)
 const app = express(server)
 const bareServer = createBareServer('/v/')
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 5000
 if (config.challenge) {
   console.log('Password protection is enabled. Usernames are: ' + Object.keys(config.users))
   console.log('Passwords are: ' + Object.values(config.users))
@@ -87,9 +92,9 @@ server.on('upgrade', (req, socket, head) => {
 })
 
 server.on('listening', () => {
-  console.log(`Running at http://localhost:${PORT}`)
+  console.log(`Running at http://localhost: 5000`)
 })
 
 server.listen({
-  port: PORT,
+  port: 5000,
 })
