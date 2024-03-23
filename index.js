@@ -8,8 +8,8 @@ import config from './config.js'
 const __dirname = process.cwd()
 import { readFileSync } from "fs";
 const options = {
-   key: readFileSync("/etc/letsencrypt/live/thingy.myftp.org/privkey.pem"),
-   cert: readFileSync("/etc/letsencrypt/live/thingy.myftp.org/cert.pem"),
+   key: readFileSync("/etc/letsencrypt/live/example.com/privkey.pem"),
+   cert: readFileSync("/etc/letsencrypt/live/example.com/cert.pem"),
 };
 const server = https.createServer(options)
 const app = express(server)
