@@ -1,16 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const appsList = [
-
-     {
-      name: 'Pranx',
-      link: 'https://pranx.com/',
-      image: '/assets/media/icons/googlefeud.webp',
-      categories: ['all'],
-    },
-     {
-      name: 'Chrome remote desktop',
-      link: 'https://remotedesktop.google.com/?pli=1',
-      image: '/assets/media/icons/googlefeud.webp',
+    {
+      name: '! Request A Game',
+      link: 'https://forms.gle/94fJ9yAXQCgaXTrz6',
+      image: '/assets/media/icons/request.webp',
       categories: ['all'],
     },
     {
