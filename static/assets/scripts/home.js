@@ -61,10 +61,13 @@ document.onkeydown = function (evt) {
 }
 
 let splashtext = [
-  'Over 7 Million Users in 2023!',
-  'Fastest growing proxy server!',
-  'Made by Bubbo!',
-  'Check out discord.gg/interstellar :)',
+  'Dogs smell yum',
+  'Made by Joseph Stein',
+  '"SplashText"',
+  'I like chicken
+  'Allen if u see this ur gay'
+  'emmerick get off of pokemon go'
+  'I EAT CARS YUM 🦶':)',
 ]
 
 document.getElementById('splash').innerText = splashtext[Math.floor(Math.random() * splashtext.length)]
